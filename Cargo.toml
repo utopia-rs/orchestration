@@ -1,0 +1,23 @@
+[package]
+name = "utopia-orchestration"
+description = "Container orchestration on Docker, through the Docker CLI or the Engine API on its Unix socket: images, containers, executions, networks and usage statistics."
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.88"
+license = "BSD-3-Clause"
+
+[dependencies]
+bytes = "1"
+http-body-util = "0.1"
+hyper = { version = "1", features = ["server", "http1", "client"] }
+hyper-util = { version = "0.1", features = ["tokio"] }
+php-std = { version = "0.1.0", git = "https://github.com/utopia-rs/php-std" }
+thiserror = "2"
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal"] }
+utopia-console = { version = "0.1.0", git = "https://github.com/utopia-rs/console" }
+
+[dev-dependencies]
+tokio = { version = "1", features = ["rt-multi-thread", "macros", "net", "time", "sync", "signal"] }
+
+[package.metadata.utopia]
+php-sync = "809d2819d7da00d8b2f486e3bcb4c98a5265e950"
